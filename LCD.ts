@@ -1,4 +1,4 @@
-//% weight=10 color=#DC143C icon="\uf108" block="LCD"
+ //% weight=10 color=#DC143C icon="\uf108" block="LCD"
 namespace LCD {
 
     const xMin = 0
@@ -586,10 +586,11 @@ namespace LCD {
     //% blockGap=10
     //% block="Determine if image 1 %image1 and image 2 %image2 overlap"
     export function touch(image1: Image, image2: Image): number {
-        if ((image2.xStart > image1.xStart + image1.width || image2.xStart + image2.width < image1.xStart) && (image2.yStart > image1.yStart + image1.height || image2.yStart + image2.height < image1.yStart)) {
-            return 0
-        } else {
+//        if ((image2.xStart > image1.xStart + image1.width || image2.xStart + image2.width < image1.xStart) && (image2.yStart > image1.yStart + image1.height || image2.yStart + image2.height < image1.yStart)) {
+          if ((image2.xStart > image1.xStart - image2.width && image2.xStart < image1.xStart+ image1.width ) && (image2.yStart > image1.yStart - image2.height && image2.yStart < image1.yStart+ image1.height )) {
             return 1
+        } else {
+            return 0
         }
     }
 
