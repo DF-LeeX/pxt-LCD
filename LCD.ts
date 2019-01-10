@@ -128,7 +128,7 @@ namespace LCD {
             let yStart2 = 0
             let xEnd2 = 0
             let yEnd2 = 0
-            if ((xEnd >= this.xStart + this.width || xEnd + this.width <= this.xStart) && (yEnd >= this.yStart + this.height || yEnd + this.height <= this.yStart)) {
+            if ((xEnd >= this.xStart + this.width || xEnd + this.width <= this.xStart) || (yEnd >= this.yStart + this.height || yEnd + this.height <= this.yStart)) {
                 overlapping = 1
                 xStart1 = this.xStart
                 yStart1 = this.yStart
@@ -469,7 +469,7 @@ namespace LCD {
             return
         }
         lcdinit()
-        spiStart()
+        spiStart()  
         writeHead()
         spiWrite8(0x03)
         spiWrite8(5)
