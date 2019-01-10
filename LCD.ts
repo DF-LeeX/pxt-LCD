@@ -179,7 +179,7 @@ namespace LCD {
                 xEnd2 = this.xStart + this.width
                 yEnd2 = this.yStart + this.height
             }
-            if ((xEnd == this.xStart) && (yEnd > this.yStart - this.height && yEnd < this.yStart + this.height)) {
+            if ((xEnd == this.xStart) && (yEnd >= this.yStart - this.height && yEnd <= this.yStart + this.height)) {
                 overlapping = 1
                 if (yEnd < this.yStart) {
                     xStart1 = this.xStart
@@ -197,7 +197,7 @@ namespace LCD {
                 xEnd2 = 0
                 yEnd2 = 0
             }
-            if ((yEnd == this.yStart) && (xEnd > this.xStart - this.width && xEnd < this.xStart + this.width)) {
+            if ((yEnd == this.yStart) && (xEnd >= this.xStart - this.width && xEnd <= this.xStart + this.width)) {
                 overlapping = 1
                 if (xEnd > this.xStart) {
                     xStart1 = this.xStart
